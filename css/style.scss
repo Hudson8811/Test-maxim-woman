@@ -46,6 +46,8 @@ body {
 	p {
 		margin: 0;
 	}
+	.swiper-wrapper {
+	}
 	.test-desktop {
 		@media (max-width: 800px){
 			display: none;
@@ -857,16 +859,15 @@ body {
 			.test-card__footer {
 				margin-top: 150px;
 				padding: 0 80px 0 40px;
+				flex-wrap: wrap;
 				@media (max-width: 1920px){
 					margin-top: 7.81vw;
 					padding: 0 4.17vw 0 2.08vw;
 					
 				}
 				@media (max-width: 800px){
-					flex-direction: column;
 				}
 				.test-card__btn, .result__btn {
-					flex: 0 1 50%;
 					font-size: 20px;
 					opacity: 1;
 					pointer-events: auto;
@@ -883,16 +884,50 @@ body {
 				}
 				.result__btn {
 					background-color: #284CA6;
+					flex: 0 1 100%;
+					@media (max-width: 800px){
+						width: 48.50vw;
+						height: 8.63vw;
+					}
+
 				}
 				.test-card__btn {
-					margin-left: 40px;
+					background-color: transparent;
+					color: #284CA6;
+					width: auto;
+					height: auto;
+					margin-top: 40px;
 					@media (max-width: 1920px){
-						margin-left: 2.08vw;
-						
+						margin-top: 2.08vw;
 					}
 					@media (max-width: 800px){
 						margin: 0;
-						margin-top: 3vw;
+						margin-top: 5vw;
+					}
+					.share-icons {
+						display: flex;
+						margin-left: 40px;
+						@media (max-width: 1920px){
+							margin-left: 2.08vw;
+						}
+						@media (max-width: 800px){
+							margin-left: 8vw;
+						}
+						svg {
+							width: 40px;
+							height: 40px;
+							margin-left: 20px;
+							@media (max-width: 1920px){
+								width: 2.08vw;
+								height: 2.08vw;
+								margin-left: 1.04vw;
+							}
+							@media (max-width: 800px){
+								width: 6.08vw;
+								height: 6.08vw;
+								margin-left: 2.04vw;
+							}
+						}
 					}
 				}
 			}
