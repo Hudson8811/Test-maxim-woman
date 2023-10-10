@@ -1,4 +1,4 @@
-var swiper = new Swiper(".test__swiper", {
+var test__swiper = new Swiper(".test__swiper", {
 	navigation: {
 		nextEl: ".test__btn-next",
 		prevEl: ".test__btn-prev",
@@ -7,6 +7,8 @@ var swiper = new Swiper(".test__swiper", {
 	effect: 'fade',
 	autoHeight: true,
 });
+
+
 
 $(document).ready(function() {
 	$( ".test__radiobuttons .test__radiobuttons-item" ).on( "click", function() {
@@ -51,4 +53,5 @@ $(document).ready(function() {
 		swiper.slideTo(0);
 	});
 });
+
 

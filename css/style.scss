@@ -40,6 +40,7 @@ body {
 .test {
 	max-width: 1920px;
 	position: relative;
+
 	* {
 		box-sizing: border-box;
 	}
@@ -47,6 +48,26 @@ body {
 		margin: 0;
 	}
 	.swiper-wrapper {
+		.swiper-slide {
+			&.swiper-slide-active {
+				.test-card__hint {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.btn-pusle {
+		box-shadow: 0 0 0 0px #41B3FB;
+		animation: btn-pusle 1s linear 0s infinite;
+	}
+	@keyframes btn-pusle {
+		0% {
+			box-shadow: 0 0 0 0px #41B3FB;
+		}
+		100% {
+			box-shadow: 0 0 5px 20px #41B3FB11;
+		}
 	}
 	.test-desktop {
 		@media (max-width: 800px){
@@ -337,7 +358,7 @@ body {
 			}
 			&.js-active {
 				.test-card__hint {
-					opacity: 0;
+					display: none;
 				}
 				.test-card__btn {
 					opacity: 1;
@@ -359,9 +380,12 @@ body {
 			}
 		}
 		&__hint {
+			pointer-events: none;
+			opacity: 0;
 			display: flex;
 			align-items: center;
 			left: 100px;
+			transition: all 0.3s ease 5s;
 			@media (max-width: 1920px){
 				left: 5.21vw;
 				
@@ -746,6 +770,35 @@ body {
 		pointer-events: none;
 		z-index: -1;
 		transition: all 0.7s ease 0s;
+		padding-bottom: 92px;
+		@media (max-width: 1920px){
+			padding-bottom: 4.8vw;
+		}
+		@media (max-width: 800px){
+			padding-bottom: 16.4vw;
+		}
+		&__bottom-string {
+			background: rgba(0, 177, 255, 0.20);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			color: #FFF;
+			text-align: center;
+			font-family: Arial;
+			font-size: 46px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 200%; /* 50.4px */
+			@media (max-width: 1920px){
+				font-size: 2.40vw;
+			}
+			@media (max-width: 800px){
+				line-height: 150%; /* 50.4px */
+				font-size: 4.2vw;
+				padding: 2vw 0;
+			}
+		}
 		&__top {
 			display: none;
 			@media (max-width: 800px){
@@ -857,13 +910,12 @@ body {
 				}
 			}
 			.test-card__footer {
-				margin-top: 150px;
+				margin-top: 80px;
 				padding: 0 80px 0 40px;
 				flex-wrap: wrap;
 				@media (max-width: 1920px){
-					margin-top: 7.81vw;
+					margin-top: 4.17vw;
 					padding: 0 4.17vw 0 2.08vw;
-					
 				}
 				@media (max-width: 800px){
 				}
@@ -995,6 +1047,7 @@ body {
 			min-height: 0;
 			@media (max-width: 800px){
 				min-height: 100%;
+				padding-bottom: 4vw;
 			}
 		}
 		&__subtitle {
