@@ -50,7 +50,7 @@ $(document).ready(function() {
 		$('.result').removeClass('show');
 		$('.test__card').removeClass('hide');
 		$('.test__swiper').slideDown();
-		swiper.slideTo(0);
+		test__swiper.slideTo(0);
 	});
 });
 
